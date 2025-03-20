@@ -1,4 +1,4 @@
-use crate::token::constants::compute_budget_id;
+use crate::{token::constants::compute_budget_id, utils};
 use ic_solana::types::Instruction;
 // use borsh::{BorshDeserialize, BorshSerialize};
 use anyhow::anyhow;
@@ -82,12 +82,18 @@ pub enum ComputeBudgetInstruction {
 impl ComputeBudgetInstruction {
     /// Create a `ComputeBudgetInstruction::RequestHeapFrame` `Instruction`
     pub fn request_heap_frame(bytes: u32) -> Instruction {
-        Instruction::new_with_borsh(compute_budget_id(), &Self::RequestHeapFrame(bytes), vec![])
+        // Instruction::new_with_borsh(compute_budget_id(), &Self::RequestHeapFrame(bytes), vec![])
+        utils::new_with_borsh(compute_budget_id(), &Self::RequestHeapFrame(bytes), vec![])
     }
 
     /// Create a `ComputeBudgetInstruction::SetComputeUnitLimit` `Instruction`
     pub fn set_compute_unit_limit(units: u32) -> Instruction {
-        Instruction::new_with_borsh(
+        // Instruction::new_with_borsh(
+        //     compute_budget_id(),
+        //     &Self::SetComputeUnitLimit(units),
+        //     vec![],
+        // )
+        utils::new_with_borsh(
             compute_budget_id(),
             &Self::SetComputeUnitLimit(units),
             vec![],
@@ -96,7 +102,12 @@ impl ComputeBudgetInstruction {
 
     /// Create a `ComputeBudgetInstruction::SetComputeUnitPrice` `Instruction`
     pub fn set_compute_unit_price(micro_lamports: u64) -> Instruction {
-        Instruction::new_with_borsh(
+        // Instruction::new_with_borsh(
+        //     compute_budget_id(),
+        //     &Self::SetComputeUnitPrice(micro_lamports),
+        //     vec![],
+        // )
+        utils::new_with_borsh(
             compute_budget_id(),
             &Self::SetComputeUnitPrice(micro_lamports),
             vec![],
@@ -116,7 +127,12 @@ impl ComputeBudgetInstruction {
 
     /// Create a `ComputeBudgetInstruction::SetLoadedAccountsDataSizeLimit` `Instruction`
     pub fn set_loaded_accounts_data_size_limit(bytes: u32) -> Instruction {
-        Instruction::new_with_borsh(
+        // Instruction::new_with_borsh(
+        //     compute_budget_id(),
+        //     &Self::SetLoadedAccountsDataSizeLimit(bytes),
+        //     vec![],
+        // )
+        utils::new_with_borsh(
             compute_budget_id(),
             &Self::SetLoadedAccountsDataSizeLimit(bytes),
             vec![],
