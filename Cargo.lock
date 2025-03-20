@@ -849,6 +849,7 @@ dependencies = [
 [[package]]
 name = "ic-solana"
 version = "0.3.0"
+source = "git+https://github.com/octopus-network/ic-solana/?branch=feature%2Fomnity-solana#434fbcb16b730adbc98456f2240e99480d6e47d8"
 dependencies = [
  "base64 0.22.1",
  "bincode",
@@ -2106,8 +2107,3 @@ dependencies = [
  "quote",
  "syn 2.0.100",
 ]
-
-[[patch.unused]]
-name = "curve25519-dalek"
-version = "3.2.1"
-source = "git+https://github.com/solana-labs/curve25519-dalek.git?rev=b500cdc2a920cd5bff9e2dd974d7b97349d61464#b500cdc2a920cd5bff9e2dd974d7b97349d61464"

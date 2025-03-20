@@ -30,8 +30,9 @@ num-derive = "0.4"
 num_enum = "0.7.2"
 # getrandom = { version = "0.2", features = ["custom"] }
 # bip32 = { version = "0.5.1", features = ["k256"] }
-ic-solana = { path = "../ic-solana/src/ic-solana" }
+ic-solana = { git = "https://github.com/octopus-network/ic-solana/", branch = "feature/omnity-solana", package = "ic-solana" }
+# ic-solana = { path = "../ic-solana/src/ic-solana" }
 
-[patch.crates-io]
-# Required by `solana-client` v2.0
-curve25519-dalek = { git = "https://github.com/solana-labs/curve25519-dalek.git", rev = "b500cdc2a920cd5bff9e2dd974d7b97349d61464" }
+# [patch.crates-io]
+# # Required by `solana-client` v2.0
+# curve25519-dalek = { git = "https://github.com/solana-labs/curve25519-dalek.git", rev = "b500cdc2a920cd5bff9e2dd974d7b97349d61464" }
